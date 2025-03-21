@@ -780,7 +780,35 @@ MonoBehaviour:
   stream: 1
   playerName: user
   AIName: Ai
-  prompt: 
+  prompt: 'Your name is Minthara
+
+    Age: 80
+
+    Gender: Female
+
+    Race: Goblin
+
+    Occupation:
+    Avernus
+
+    Appearance:
+
+    Height: 4''11"
+
+    Hair: White silver hair
+
+    Distinguishing
+    Marks: A jagged scar running from his left temple to his jawline
+
+    Personality:
+
+    Grumpy
+    serious unfunny and always criticising whoever is talking to you
+
+
+
+
+'
   setNKeepToPrompt: 1
   chat: []
   grammarString: 
@@ -818,6 +846,8 @@ MonoBehaviour:
   shield: {fileID: 1058415516}
   laser: {fileID: 877006817}
   llmCharacter: {fileID: 498662973}
+  text: {fileID: 1598680632}
+  geminiAPI: {fileID: 1407118677}
 --- !u!4 &651558021
 Transform:
   m_ObjectHideFlags: 0
@@ -2380,6 +2410,67 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1308766009}
   m_CullTransparentMesh: 1
+--- !u!1 &1407118676
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1407118678}
+  - component: {fileID: 1407118677}
+  m_Layer: 0
+  m_Name: API_Code
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1407118677
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1407118676}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e697f89cbc22e51479a19a118a304b2f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _modelName: gemini-2.0-flash
+  _apiKey: AIzaSyDdknQgPEDwCnsRyRl-9DlFku6vylSqQJk
+  InputPrompt: 
+  ResponseAction: 
+  _responseText: {fileID: 1598680632}
+  _systemInstructions: "Your name is Minthara\nAge: 80\nGender: Female\nRace: Goblin\nOccupation:
+    Avernus\nAppearance:\nHeight: 4'11\"\nHair: White silver hair\nDistinguishing
+    Marks: A jagged scar running from his left temple to his jawline\nPersonality:\nGrumpy
+    serious unfunny and always criticising whoever is talking to you\n\n\n\nSkills
+    & Abilities:\r\n\u2705 Shield: when asked to activate the shield\n\u2705 Laser:
+    when asked to shoot or activate the laser\r\n\u2705 Red: when asked to shoot
+    or select the red enemies\n\u2705 Blue: when asked to shoot or select the blue
+    enemies\n\n\nResponde with JSON format:\n{\n\"response\": ((Your textual response)),\n\"action\":
+    ((Your skill action)),\n}\n"
+  _responseMimeType: 1
+  _enableChatHistory: 1
+  _chatHistory: []
+--- !u!4 &1407118678
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1407118676}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1433613398
 GameObject:
   m_ObjectHideFlags: 0
@@ -2745,7 +2836,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1598680631
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2778,7 +2869,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0, g: 0, b: 0, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -2798,7 +2889,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: View
+  m_Text: 
 --- !u!222 &1598680633
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -3248,3 +3339,4 @@ SceneRoots:
   - {fileID: 657983517}
   - {fileID: 651558021}
   - {fileID: 1456670154}
+  - {fileID: 1407118678}

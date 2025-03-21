@@ -1991,7 +1991,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _modelName: gemini-2.0-flash
-  _apiKey: AIzaSyDmut9RvrTgNw1eB_C2q4giR5gCqYtmJUk
+  _apiKey: AIzaSyDdknQgPEDwCnsRyRl-9DlFku6vylSqQJk
   _promptInputField: {fileID: 1202043021}
   _sendButton: {fileID: 244680390}
   _responseText: {fileID: 1436159521}

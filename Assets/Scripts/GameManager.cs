@@ -25,6 +25,8 @@ public class GameManager : MonoBehaviour
     public static string textToSpeech;
     private const string API_STT_URL = "https://router.huggingface.co/hf-inference/models/openai/whisper-large-v3";
     public static string selectedEnemyType = "RedEnemy";
+    [SerializeField] private Text text;
+    [SerializeField] private MyGeminiAPI geminiAPI;
     private void Awake()
     {
         if (Instance == null)
@@ -65,8 +67,10 @@ public class GameManager : MonoBehaviour
 
     public async void onInputFieldSubmit(string message)
     {
-        string skill = await llmCharacter.Chat(ConstructSkillPrompt(message));
-        switch (skill)
+        geminiAPI.InputPrompt = message;
+        await geminiAPI.SendPrompt();
+        // string skill = await llmCharacter.Chat(ConstructSkillPrompt(message)); text.text = skill;
+        switch (geminiAPI.ResponseAction)
         {
             case "Laser":
                 SkillsFunctions.activate(laser);
@@ -200,7 +204,7 @@ public class GameManager : MonoBehaviour
         {
             // Handle any errors that occurred during the process
             Debug.LogError($"Error fetching: {e.Message}");
-            // text.text = "Failed to fetch";
+            text.text = "Failed to fetch";
         }
         finally
         {
